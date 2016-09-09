@@ -1,5 +1,5 @@
 
-(function(){
+(function(window, document){
   var t = {
     saveAllDate:[],
     currMonDate:[],
@@ -150,18 +150,22 @@
       this.getAllArt(6);
       var _this = this;
       setTimeout(function(){
-        console.log('---'+_this.currMonDate);
+        console.log('data[] = '+ _this.currMonDate);
         days = _this.getMonthDate();
-
         htm = _this.createTable(days);
-        console.log(htm)
+
+        //挂载至window
+        window.blog_2338792975_table = htm
+
+        console.log('table = ' + htm)
       },500)
       
     }
   }
 
   t.init();
-})()
+  
+})(window, document)
 
 
 
